@@ -22,4 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Global\Global.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="zulu17.44.53-ca-jdk17.0.8.1-win_x64-stripped.zip" />
+  </ItemGroup>
 </Project>

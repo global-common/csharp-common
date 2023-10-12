@@ -308,8 +308,10 @@ public partial class Util
     public static string StreamAsText(Stream stream)
     {
         if (stream == null) return "";
+        long pos = stream.Position;
         var streamReader = new StreamReader(stream);
         var text = streamReader.ReadToEnd();
+        stream.Position = pos;
         return text;
     }
 
@@ -326,8 +328,10 @@ public partial class Util
     public static byte[] StreamAsBytes(Stream stream)
     {
         if (stream == null) return new byte[] { };
+        long pos = stream.Position;
         byte[] bytes = new byte[(int)stream.Length];
         stream.Read(bytes, 0, (int)stream.Length);
+        stream.Position = pos;
         return bytes;
     }
 
